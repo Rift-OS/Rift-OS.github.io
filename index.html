@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Rift-OS — 超軽量で高速な次世代OSプロトタイプ。開発状況とコアアーキテクチャを紹介します。" />
+  <title>Rift-OS Official</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container" role="document" id="app">
+    <div class="topbar" aria-hidden="false">
+      <div style="display:flex;flex-direction:column">
+        <small class="small">Alpha • 公開情報のみ表示</small>
+      </div>
+      <div class="controls" role="toolbar" aria-label="表示オプション">
+        <button id="theme-toggle" class="btn" aria-pressed="false" title="テーマ切替" type="button" aria-label="テーマ切替">ライト／ダーク</button>
+        <a href="https://github.com/Rift-OS" class="btn" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+
+    <header class="hero" role="banner">
+      <h1>数秒で、サクッと起動する。</h1>
+      <p>Rift-OSは、徹底的な無駄の排除と低レイヤ最適化による次世代OSプロトタイプです。</p>
+    </header>
+
+    <main>
+      <section class="section" aria-labelledby="core-arch">
+        <h2 id="core-arch">コア・アーキテクチャ</h2>
+        <div class="grid" role="list">
+          <article class="card" role="listitem" aria-labelledby="t1">
+            <h3 id="t1">超軽量タスク制御 (Sleep)</h3>
+            <p>ミリ秒未満の高速復帰を実現。</p>
+            <div class="meta-row">
+              <span class="badge">低レイテンシ</span>
+              <span class="badge">リアルタイム志向</span>
+            </div>
+          </article>
+          <article class="card" role="listitem" aria-labelledby="t2">
+            <h3 id="t2">高速ファイルIO (CreateFile)</h3>
+            <p>メモリーマップによるボトルネック排除。</p>
+            <div class="meta-row">
+              <span class="badge">MMAP</span>
+              <span class="badge">スケーラブル</span>
+            </div>
+          </article>
+          <article class="card" role="listitem" aria-labelledby="t3">
+            <h3 id="t3">ベアメタル開発</h3>
+            <p>100%制御可能な実行環境。</p>
+            <div class="meta-row">
+              <span class="badge">クロスコンパイル</span>
+              <span class="badge">カスタムブート</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="live-status">
+        <h2 id="live-status">開発状況 (Live)</h2>
+        <div id="api-content" class="card" aria-live="polite">
+          <span class="status"><span class="loader" aria-hidden="true"></span>読み込み中…</span>
+        </div>
+
+        <div class="grid" style="margin-top:1rem" aria-hidden="false">
+          <article class="card" aria-labelledby="ci">
+            <h3 id="ci">CI / ビルド</h3>
+            <p class="small">最新のビルドステータスと最終コミット。</p>
+            <div id="ci-content" class="meta-row small" style="margin-top:.75rem">
+              <span class="badge">ステータス: <strong id="ci-status">—</strong></span>
+              <span class="badge">最終コミット: <small id="commit-hash">—</small></span>
+            </div>
+          </article>
+
+          <article class="card" aria-labelledby="release">
+            <h3 id="release">最新リリース</h3>
+            <p class="small">配布アセットと簡易インストール手順。</p>
+            <div style="margin-top:.75rem">
+              <div class="small">最新: <strong id="latest-release">—</strong></div>
+              <div class="small" style="margin-top:.5rem">クイックインストール: <span class="code">curl -sSL https://example.com/install.sh | sh</span></div>
+            </div>
+          </article>
+
+          <article class="card" aria-labelledby="roadmap">
+            <h3 id="roadmap">ロードマップ (短期)</h3>
+            <p class="small">今後のマイルストーン。</p>
+            <ul style="margin-top:.5rem;color:var(--muted)">
+              <li>v0.2: ブート最適化</li>
+              <li>v0.3: ファイルシステム改善</li>
+              <li>ドライバ基盤の安定化</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer style="margin-top:1.5rem">
+      <div class="footer-row">
+        <a href="https://github.com/Rift-OS" class="btn" target="_blank" rel="noopener noreferrer">GitHub でプロジェクトを見る</a>
+        <span class="small" style="margin-left:.5rem;color:var(--muted)">ドキュメント・貢献歓迎</span>
+      </div>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
